@@ -6,5 +6,7 @@ result=""
 for filename in files:
     with open(directory+"autostart/"+filename,"r",encoding="UTF-8") as file:
         for line in file.readlines():
-            if line[:5]=="Exec=": result+="exec "+line[5:]
+            if line[:5]=="Exec=": 
+                result+="exec "+line[5:]
+                break
 with open(directory+"i3/startup-apps","w") as file: file.write(result)
